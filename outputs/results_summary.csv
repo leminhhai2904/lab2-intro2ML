@@ -1,0 +1,18 @@
+Metric,Value,Description
+n_positive_samples,100,Number of positive samples
+n_negative_samples,100,Number of negative samples
+n_pairwise_samples,10000,Number of positive-negative pairs
+true_model_auc,0.9816,Pairwise ranking accuracy with true weights
+rankboost_rounds,50,Number of boosting iterations
+rankboost_final_pairwise_error,0.0211,Ensemble training pairwise misranking error
+rankboost_final_exp_loss,0.1051,Ensemble training exponential loss
+learned_auc,0.9789,Pairwise ranking accuracy (AUC) of trained RankBoost
+random_baseline_auc,0.4950,Pairwise ranking accuracy of random baseline
+auc_improvement,0.4839,Difference between learned AUC and random AUC
+mean_pairwise_margin,5.2586,Mean value of pairwise margins: h(x_pos) - h(x_neg)
+fraction_margin_gt_0,0.9789,Fraction of training pairs with margin > 0
+fraction_margin_gt_1,0.9404,Fraction of training pairs with margin > 1
+fraction_margin_gt_2,0.8626,Fraction of training pairs with margin > 2
+margin_loss_rho_0.0,0.0141,Empirical margin loss at rho = 0.0
+margin_loss_rho_1.0,0.0504,Empirical margin loss at rho = 1.0
+margin_loss_rho_2.0,0.1505,Empirical margin loss at rho = 2.0

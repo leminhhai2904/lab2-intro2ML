@@ -39,14 +39,14 @@ def run_all_experiments():
             )
             
             if result.returncode == 0:
-                print(f"✓ {exp_name} completed successfully")
+                print(f"[OK] {exp_name} completed successfully")
                 completed += 1
             else:
-                print(f"✗ {exp_name} failed with code {result.returncode}")
+                print(f"[FAIL] {exp_name} failed with code {result.returncode}")
                 failed += 1
                 
         except Exception as e:
-            print(f"✗ {exp_name} error: {e}")
+            print(f"[FAIL] {exp_name} error: {e}")
             failed += 1
     
     # Summary
@@ -57,10 +57,10 @@ def run_all_experiments():
     print(f"Failed: {failed}/{len(EXPERIMENTS)}")
     
     if failed == 0:
-        print("\n✓ All experiments completed successfully!")
+        print("\n[OK] All experiments completed successfully!")
         print(f"Check outputs/figures/ for generated plots")
     else:
-        print(f"\n✗ {failed} experiment(s) failed")
+        print(f"\n[FAIL] {failed} experiment(s) failed")
     
     print("="*70)
 

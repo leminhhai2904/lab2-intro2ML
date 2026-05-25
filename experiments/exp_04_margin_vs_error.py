@@ -66,7 +66,7 @@ def main():
         loss = margin_loss(X_pairs, y_pairs, scores, rho=rho)
         margin_losses.append(loss)
         if len(margin_losses) % 10 == 0:
-            print(f"  ρ = {rho:.2f}, margin loss = {loss:.4f}")
+            print(f"  rho = {rho:.2f}, margin loss = {loss:.4f}")
     
     # Create figure
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
@@ -97,14 +97,14 @@ def main():
     print(f"  Fraction with margin > 2: {np.sum(margins > 2) / len(margins):.4f}")
     
     print("\nMargin Loss Trade-off:")
-    print(f"  Loss at ρ=0.0: {margin_losses[0]:.4f}")
-    print(f"  Loss at ρ=1.0: {margin_losses[np.argmin(np.abs(rhos - 1.0))]:.4f}")
-    print(f"  Loss at ρ=2.0: {margin_losses[np.argmin(np.abs(rhos - 2.0))]:.4f}")
+    print(f"  Loss at rho=0.0: {margin_losses[0]:.4f}")
+    print(f"  Loss at rho=1.0: {margin_losses[np.argmin(np.abs(rhos - 1.0))]:.4f}")
+    print(f"  Loss at rho=2.0: {margin_losses[np.argmin(np.abs(rhos - 2.0))]:.4f}")
     
     print("\nInterpretation:")
-    print("- Larger margin ρ means stricter ranking requirement")
-    print("- Larger ρ typically increases margin loss L_ρ")
-    print("- Trade-off: more margin → better generalization (but higher training loss)")
+    print("- Larger margin rho means stricter ranking requirement")
+    print("- Larger rho typically increases margin loss L_rho")
+    print("- Trade-off: more margin -> better generalization (but higher training loss)")
     print("- Margin-based bounds relate generalization error to this trade-off")
 
 
